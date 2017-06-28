@@ -1,0 +1,27 @@
+<style>
+    .glyphicon-thumbs-up{
+        cursor: pointer;
+    }
+</style>
+
+<div>
+    <h1>{{posts.title}}</h1> <br>
+    <p>Yazar : {{posts.author}}</p>
+    <p>Like : {{posts.like}}</p> <br>
+    <h3>{{posts.text}}</h3><br>
+
+    <h4>Yorumlar</h4><br>
+    <div class="col-ld-3" ng-repeat="comment in posts.comments">
+        <p>{{comment.comment}}</p>
+        <li> <i ng-click="LikeComment(comment)" class="glyphicon glyphicon-thumbs-up"></i> {{comment.like}}</li><br>
+    </div>
+
+    <form name="frmComment"   >
+        <input type="text" class="form-control" ng-model="comment" placeholder="Yorum ekle...." required/>
+        <br>
+        <button ng-click="PostComment()" ng-disabled="frmComment.$invalid" class="btn btn-info">Gönder</button>
+
+    </form>
+</div>
+
+

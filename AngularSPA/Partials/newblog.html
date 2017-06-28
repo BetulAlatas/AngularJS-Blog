@@ -1,0 +1,17 @@
+<h1>Yeni Blog Yazısı</h1>
+
+<form name="frm">
+
+    <h3>Başlık</h3>
+    <input type="text" class="form-control" ng-model="title" required/><br>
+    <h3>Yazar</h3>
+    <input type="text" class="form-control" ng-model="author" required/><br>
+    <h3>Yazı</h3>
+    <input type="text" class="form-control" ng-model="text" required/>
+    <br> <br>
+    <button ng-click="NewBlog()" ng-disabled="frm.$invalid" class="btn btn-info">Yayınla</button>
+</form>
+<br>
+<p class="alert alert-success" ng-model="alert" ng-show="alert">
+ Başarıyla Kaydedildi
+</p>
